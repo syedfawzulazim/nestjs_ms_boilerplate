@@ -12,14 +12,14 @@ async function bootstrap() {
     .setTitle('Products-Service')
     .setDescription('API to handle everything related to products')
     .setVersion('1.0')
-    .addTag('Products')
-    .addBasicAuth()
+    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
   
-  await app.listen(3000);
+  await app.listen(process.env.PORT);
+  logger.log(`Application listening ports: ${process.env.PORT}`);
 }
 bootstrap();
