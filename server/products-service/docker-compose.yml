@@ -12,5 +12,7 @@ services:
       - ./.env
     volumes:
       - ./src:/app/src
+      - ./swagger.json:/app/swagger.json
+
 
 
