@@ -22,10 +22,8 @@ async function bootstrap() {
   const outputPath = path.resolve(process.cwd(), 'swagger.json');
   writeFileSync(outputPath, JSON.stringify(document), { encoding: 'utf8' });
 
-
-  
   await app.listen(process.env.PORT);
-  logger.log(`Application listening ports: ${process.env.PORT}`);
+  logger.log(`Application listening port: ${process.env.PORT}`);
 }
 bootstrap().catch((error) => {
   console.log(error?.message, error?.stack);
