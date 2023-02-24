@@ -11,9 +11,14 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "paths": {
       "@src/*": ["src/*"]
     },
+    "lib": [
+      "ES2019",
+      "DOM"
+    ],
   }
 }

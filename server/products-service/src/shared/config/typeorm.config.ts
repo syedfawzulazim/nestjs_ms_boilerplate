@@ -12,7 +12,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   autoLoadEntities: true,
   migrationsRun: process.env.DATABASE_MIGRATION === 'true',
   migrationsTableName: 'migration',
-  migrations: [process.env.DATABASE_MIGRATION_FILES ?? __dirname + '/../../../migration/*.js'],
+  migrations: [process.env.DATABASE_MIGRATION_FILES ?? 'dist/migration/*.js'],
   cli: {
     migrationsDir: 'migration',
   },
