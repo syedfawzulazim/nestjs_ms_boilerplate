@@ -1,3 +1,4 @@
+import { Products } from '@src/domain/models/products';
 import {
     BaseEntity,
     Column,
@@ -13,7 +14,7 @@ import {
   @Entity({name: 'products'})
   export class ProductsEntity extends BaseEntity{
     @PrimaryGeneratedColumn('uuid')
-    id: string
+    id: number
 
     @Column({name: 'title'})
     title: string
@@ -24,4 +25,13 @@ import {
     @Column({name: 'price'})
     price: number
 
-  }
+    toModel(): Products {
+      return new Products({
+        id: Number(this.id),
+        title: this.title,
+        description: this.description,
+        price: this.price
+      });
+    }
+  
+}
